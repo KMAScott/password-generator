@@ -27,12 +27,12 @@ var generatePassword = function() {
 
   if (passwordLengthPrompt < 8) {
     alert("You must have at least 8 characters.")
-    generatePassword();
+    return generatePassword();
   };
 
   if (passwordLengthPrompt > 128) {
     alert("Your password may not exceed 128 characters.")
-    generatePassword();
+    return generatePassword();
   };
 
   var passwordLowercaseConfirm = window.confirm(
@@ -67,7 +67,7 @@ if (passwordSpecialConfirm) {
 
 if (!passwordUppercaseConfirm && !passwordLowercaseConfirm && !passwordNumberConfirm && !passwordSpecialConfirm) {
   alert("You must choose at least one character type.")
-  generatePassword();
+  return generatePassword();
 }
 
 for (var i = 0; i < passwordLengthPrompt; i++) {
